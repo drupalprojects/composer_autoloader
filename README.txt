@@ -1,4 +1,4 @@
-# Composer Autoloader
+# Composer Vendor Autoload
 Simple module to load the Composer autoload.php file. This module allows the site builder to manually manage the dependencies for the project themselves, rather than relying on some sort of automation. You may even use this module as a dependency in your Drupal site to load the autoload.php file. 
 
 ## Installation
