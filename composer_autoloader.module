@@ -33,7 +33,7 @@ function composer_autoloader_init() {
     // Add the error to the log.
     watchdog('composer_autoloader', $text, $variables, WATCHDOG_ALERT);
 
-    // End the funciton.
+    // End the function.
     return;
 
   }
