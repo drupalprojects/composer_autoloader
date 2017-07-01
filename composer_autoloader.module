@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Implements hook_init().
+ * Implements hook_boot().
  *
  * Require the Composer Autoload File.
  */
-function composer_autoloader_init() {
+function composer_autoloader_boot() {
 
   // Define the default path to the  composer autoloader.
   $default = DRUPAL_ROOT . '/../vendor/autoload.php';
@@ -22,16 +22,8 @@ function composer_autoloader_init() {
     // Variables for the text.
     $variables = array('@file' => $autoloader);
 
-    // If the current path is an admin path, display an error.
-    if (path_is_admin(current_path())) {
-
-      // Set the message.
-      drupal_set_message(t($text, $variables), 'error', FALSE);
-
-    }
-
-    // Add the error to the log.
-    watchdog('composer_autoloader', $text, $variables, WATCHDOG_ALERT);
+    // Trigger an error.
+    trigger_error(t($text, $variables), E_USER_ERROR);
 
     // End the function.
     return;
